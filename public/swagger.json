@@ -1,0 +1,1674 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"IMenuCreateResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"items": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"items",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuCreateRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuInsertItemResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"items": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"items",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuInsertItemRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"item": {
+						"properties": {
+							"_id": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"_id"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"_id",
+					"item"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISingleItem": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"size",
+					"price",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuGetAllMenuResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ISingleItem"
+						},
+						"type": "array"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"items",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuItemAddResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"size",
+					"price",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuItemAddRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"name",
+					"size",
+					"price"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuItemDeleteResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"size": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"size",
+					"price",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMenuItemDeleteRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderCreateResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"customer": {
+						"type": "string"
+					},
+					"waiter": {
+						"type": "string"
+					},
+					"table": {
+						"type": "string"
+					},
+					"items": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"totalBill": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"customer",
+					"waiter",
+					"table",
+					"items",
+					"totalBill",
+					"status",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderCreateRequest": {
+				"properties": {
+					"customer": {
+						"type": "string"
+					},
+					"waiter": {
+						"type": "string"
+					},
+					"table": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"customer",
+					"waiter",
+					"table"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderAddItemResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"customer": {
+						"type": "string"
+					},
+					"waiter": {
+						"type": "string"
+					},
+					"table": {
+						"type": "string"
+					},
+					"items": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"totalBill": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"customer",
+					"waiter",
+					"table",
+					"items",
+					"totalBill",
+					"status",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderAddItemRequest": {
+				"properties": {
+					"orderId": {
+						"type": "string"
+					},
+					"menuItem": {
+						"type": "string"
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"orderId",
+					"menuItem",
+					"quantity"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderDeleteItemRequest": {
+				"properties": {
+					"orderId": {
+						"type": "string"
+					},
+					"orderItem": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"orderId",
+					"orderItem"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOUserNoDoc": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"userType"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ITableNoDoc": {
+				"properties": {
+					"tableNo": {
+						"type": "number",
+						"format": "double"
+					},
+					"person": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"tableNo",
+					"person"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IItemNoDoc": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"menuItem": {
+						"type": "string"
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"totalPrice": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"menuItem",
+					"quantity",
+					"totalPrice"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IOrderGetOrder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"customer": {
+						"$ref": "#/components/schemas/IOUserNoDoc"
+					},
+					"waiter": {
+						"$ref": "#/components/schemas/IOUserNoDoc"
+					},
+					"table": {
+						"$ref": "#/components/schemas/ITableNoDoc"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/IItemNoDoc"
+						},
+						"type": "array"
+					},
+					"totalBill": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"customer",
+					"waiter",
+					"table",
+					"items",
+					"totalBill",
+					"status",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ITableAddUpdateResposne": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"tableNo": {
+						"type": "number",
+						"format": "double"
+					},
+					"person": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"tableNo",
+					"person",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ITableAddRequest": {
+				"properties": {
+					"tableNo": {
+						"type": "number",
+						"format": "double"
+					},
+					"person": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"tableNo",
+					"person"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ITableUpdateRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"tableNo": {
+						"type": "number",
+						"format": "double"
+					},
+					"person": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"tableNo",
+					"person"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ITableGetResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"tableNo": {
+						"type": "number",
+						"format": "double"
+					},
+					"person": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"tableNo",
+					"person",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserRegisterResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"userType",
+					"accessToken",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserRegisterErrorResponse": {
+				"properties": {
+					"errorCode": {
+						"type": "number",
+						"format": "double"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"errorCode",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserRegisterRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"email",
+					"password",
+					"userType"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserGetAllResposne": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"accessToken",
+					"userType",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserGetUserResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"accessToken",
+					"userType",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserGetUserRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserGetAcessTokenReponse": {
+				"properties": {
+					"accessToken": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"accessToken"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserNoDoc": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserUpdateResposne": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"userType",
+					"accessToken",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserUpdateRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"userType": {
+						"type": "string"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"email",
+					"password",
+					"userType",
+					"accessToken",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"name": "authorization",
+				"in": "header",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "test",
+		"version": "0.0.0",
+		"description": "test",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "Syed Rahat Murtaza",
+			"email": "rahat_murtaza@outlook.com",
+			"url": "https://github.com/murtazarahat"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/menu/createMenu": {
+			"post": {
+				"operationId": "CreateMenu",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IMenuCreateResponse"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"name": "Monday Morning"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Menu Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IMenuCreateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/menu/insertMenuItem": {
+			"post": {
+				"operationId": "InsertMenuItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IMenuInsertItemResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will insert item into the menu",
+				"tags": [
+					"Menu Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IMenuInsertItemRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/menu/getAllMenus": {
+			"post": {
+				"operationId": "GetAllMenus",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/IMenuGetAllMenuResponse"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will you all of the menus",
+				"tags": [
+					"Menu Management"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/menuItem/addItem": {
+			"post": {
+				"operationId": "AddItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IMenuItemAddResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "This will add new item to the system",
+				"tags": [
+					"MenuItem Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IMenuItemAddRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/menuItem/deleteItem": {
+			"delete": {
+				"operationId": "DeleteItem",
+				"responses": {
+					"200": {
+						"description": "MenuItem Deleted Succesfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IMenuItemDeleteResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will delete an Item from the System",
+				"tags": [
+					"MenuItem Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IMenuItemDeleteRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/createOrder": {
+			"post": {
+				"operationId": "CreateOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IOrderCreateResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will create an order with the Id's for customer, waiter, table, Customer must be registered",
+				"tags": [
+					"Order Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IOrderCreateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/addOrderItem": {
+			"post": {
+				"operationId": "AddOrderItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IOrderAddItemResponse"
+										}
+									],
+									"nullable": true
+								}
+							}
+						}
+					}
+				},
+				"description": "This will add the item in the order",
+				"tags": [
+					"Order Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IOrderAddItemRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/deleteOrderItem": {
+			"delete": {
+				"operationId": "DeleteOrderItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IOrderAddItemResponse"
+										}
+									],
+									"nullable": true
+								}
+							}
+						}
+					}
+				},
+				"description": "This will delete order item from the Order",
+				"tags": [
+					"Order Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IOrderDeleteItemRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/getOrder/{orderId}": {
+			"get": {
+				"operationId": "GetOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IOrderGetOrder"
+										}
+									],
+									"nullable": true
+								}
+							}
+						}
+					}
+				},
+				"description": "This will return order with details (populate used)",
+				"tags": [
+					"Order Management"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "orderId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/order/getAllOrders/{accessToken}": {
+			"post": {
+				"operationId": "GetAllOrders",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/IOrderGetOrder"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will return all of the orders based on the accessToken If it's the waiter he will only see his orders",
+				"tags": [
+					"Order Management"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "accessToken",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/table/addTable": {
+			"post": {
+				"operationId": "AddTable",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ITableAddUpdateResposne"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will add a new table",
+				"tags": [
+					"Table Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ITableAddRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/table/updateTable": {
+			"post": {
+				"operationId": "UpdateTable",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ITableAddUpdateResposne"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will update an table",
+				"tags": [
+					"Table Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ITableUpdateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/table/getTable/{tableId}": {
+			"get": {
+				"operationId": "GetTable",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ITableGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will get a table",
+				"tags": [
+					"Table Management"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "tableId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/table/deleteTable/{tableId}": {
+			"delete": {
+				"operationId": "DeleteTable",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ITableGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will delete an table",
+				"tags": [
+					"Table Management"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "tableId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/table/getAllTables": {
+			"get": {
+				"operationId": "GetAllTables",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/ITableGetResponse"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "This will get All of the tables",
+				"tags": [
+					"Table Management"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/user/registerUser": {
+			"post": {
+				"operationId": "RegisterUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{
+											"$ref": "#/components/schemas/IUserRegisterResponse"
+										},
+										{
+											"$ref": "#/components/schemas/IUserRegisterErrorResponse"
+										}
+									]
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"name": "Syed Rahat Murtaza",
+											"email": "rahat_murtaza@outlook.com",
+											"password": "rahat1996"
+										}
+									}
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden Request"
+					},
+					"409": {
+						"description": "User Already Exist",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUserRegisterErrorResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "You will be able to register but if the user already exists then it will generate 500 error with message User already exist",
+				"summary": "You will be able to register user and generate the accessToken with it",
+				"tags": [
+					"User Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserRegisterRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/getAllUsers": {
+			"get": {
+				"operationId": "GetAllUsers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/IUserGetAllResposne"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User Management"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/user/getUser": {
+			"post": {
+				"operationId": "GetUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUserGetUserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User Management"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserGetUserRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/accessToken": {
+			"post": {
+				"operationId": "GetAccessToken",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUserGetAcessTokenReponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserNoDoc"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/updateUser": {
+			"put": {
+				"operationId": "UpdateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUserUpdateResposne"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User Management"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserUpdateRequest"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
