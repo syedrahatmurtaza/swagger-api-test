@@ -15,7 +15,7 @@ import { IMenuItem } from '../types/documents/menuItem.document'
 import {
   IMenuItemAddRequest,
   IMenuItemDeleteRequest,
-} from '../types/requests/menuitem.request'
+} from '../types/requests/menuItem.request'
 import {
   IMenuItemAddResponse,
   IMenuItemDeleteResponse,
