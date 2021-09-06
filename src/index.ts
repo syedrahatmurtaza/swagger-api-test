@@ -88,7 +88,7 @@ async function start() {
   addMiddlewears(app)
 
   const PORT = process.env.PORT || 4000
-  const HOST = process.env.HOST || 'host.docker.internal'
+  const HOST = process.env.HOST || 'localhost'
 
   // Listen For The Server
   server = app?.listen(PORT, () => {
